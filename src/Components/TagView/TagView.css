@@ -1,0 +1,36 @@
+.tag.collapse .tagContent {
+    display: none;
+  }
+  
+  .Header_Tag {
+    background-color: rgb(96 165 250) ;
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+  }
+  
+  .toggleBtn {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .Add_Button {
+    background-color: #ece9e9f3;
+    border: none;
+    padding: 2px 10px;
+    cursor: pointer;
+  }
+  
+  .tagContent {
+    margin: 3px;
+    padding: 5px;
+  }
+  
+  .TagData {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+  }

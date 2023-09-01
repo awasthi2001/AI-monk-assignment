@@ -1,38 +1,37 @@
 import React, { useState } from "react";
 import "./TagTree.css";
-import {initialData} from '../../Data/data.js'
+import { initialData } from "../../Data/data.js";
 import TagView from "../TagView/TagView.jsx";
 
 const TagTree = () => {
   const [tagData, setTagData] = useState(initialData);
   const [export_Data, setExport_Data] = useState("");
 
-  const HandleaddChild = (parent) => {
-    if (!parent.children) {
-      parent.children = [];
-    }
-    parent.children.push({
-      name: "New Child",
-      data: "Data",
-    });
-    setTagData({ ...tagData });
-  };
-
-  const changeTagDataValue = (element, value) => {
-    if (element.data !== undefined) {
-      element.data = value;
+  function changeTagDataValue(tag, value) {
+    if (tag.data !== undefined) {
+      tag.data = value;
     }
     setTagData({ ...tagData });
   };
 
-  const handleExport = () => {
+  function handleExport() {
     const exportedString = JSON.stringify(
       tagData,
       ["name", "children", "data"],
       2
     );
     setExport_Data(exportedString);
-  };
+  }
+  function HandleaddChild(Tag) {
+    if (!Tag.children) {
+      Tag.children = [];
+    }
+    Tag.children.push({
+      name: "New Child",
+      data: "Data",
+    });
+    setTagData({ ...tagData });
+  }
 
   return (
     <div className="Container">

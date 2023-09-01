@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./TagTree.css";
-import { initialData } from "../../data.js";
+import {initialData} from '../../Data/data.js'
 import TagView from "../TagView/TagView.jsx";
 
 const TagTree = () => {

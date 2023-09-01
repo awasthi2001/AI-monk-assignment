@@ -1,5 +1,6 @@
 import "./TagView.css";
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const TagView = ({ tag, HandleaddChild, changeTagDataValue }) => {
   const [isCollapse, setIsCollapse] = useState(false);
@@ -38,7 +39,7 @@ const TagView = ({ tag, HandleaddChild, changeTagDataValue }) => {
           {tag.children &&
             tag.children.map((ele) => (
               <TagView
-                key={ele.name}
+                key={uuidv4()}
                 tag={ele}
                 HandleaddChild={HandleaddChild}
                 changeTagDataValue={changeTagDataValue}
